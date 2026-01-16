@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Larry & Mindy – About</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background: #fafafa;
+    }
+
+    .tabs {
+        display: flex;
+        background: #333;
+        color: white;
+    }
+
+    .tab {
+        padding: 14px 20px;
+        cursor: pointer;
+        flex: 1;
+        text-align: center;
+        background: #444;
+        transition: background 0.3s;
+    }
+
+    .tab:hover {
+        background: #555;
+    }
+
+    .tab.active {
+        background: #222;
+        font-weight: bold;
+    }
+
+    .content {
+        display: none;
+        padding: 20px;
+        background: white;
+    }
+
+    .content.active {
+        display: block;
+    }
+
+    /* Hebrew RTL */
+    .rtl {
+        direction: rtl;
+        text-align: right;
+        font-family: "Arial", sans-serif;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 20px 0;
+        border-radius: 6px;
+    }
+
+    footer {
+        margin-top: 40px;
+        padding: 20px;
+        background: #eee;
+        text-align: center;
+        font-size: 0.9em;
+        color: #555;
+    }
+</style>
+
+<script>
+function showTab(tabName) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+
+    document.getElementById(tabName).classList.add('active');
+    document.getElementById(tabName + "-tab").classList.add('active');
+}
+</script>
+
+</head>
+<body>
+
+<div class="tabs">
+    <div id="english-tab" class="tab active" onclick="showTab('english')">English</div>
+    <div id="hebrew-tab" class="tab" onclick="showTab('hebrew')">עברית</div>
+</div>
+
+<!-- ========================= -->
+<!--        ENGLISH TAB        -->
+<!-- ========================= -->
+
+<div id="english" class="content active">
+
+<h1>About Larry & Mindy</h1>
+
+<!-- Placeholder for an image -->
+<!-- Replace "your-image.jpg" with your actual filename -->
+<img src="your-image.jpg" alt="Larry and Mindy">
+
+<h2>Larry</h2>
+<p>
+Larry Fogel was born in Florida and moved to Israel at age 12. He fell in love with the guitar at 11 and discovered folk music in 3rd grade when he first heard Simon & Garfunkel’s “Feelin’ Groovy.”  
+He began performing in high school and continued through his army service, where a rumor spread that he was Paul Simon’s younger brother — and people believed it.
+</p>
+
+<p>
+After the army, Larry performed in well‑known Tel Aviv clubs, singing the music of Simon & Garfunkel, Bob Dylan, Don McLean, James Taylor, and more.  
+He later stepped away from performing to build a career in hotel, tourism, and retail management, and to raise a family.
+</p>
+
+<p>
+In 2003 he returned to the stage, performing in folk clubs across Israel and at the Jacob’s Ladder Folk Festival.  
+From 2004–2011 he performed in a Simon & Garfunkel tribute show before choosing to focus on performing with Mindy.
+</p>
+
+<h2>Mindy</h2>
+<p>
+Mindy Fogel was born in New York and grew up in Florida. At 19 she moved to Israel on her own.  
+She performed in a Jewish music group throughout the U.S. and Canada, and later studied nursing and social work at Hebrew University.
+</p>
+
+<p>
+She worked as a veterinary technician, an import manager, and later as a freelance translator.  
+Music remained her constant love — she performed at private events and sang Judy Collins, Barbra Streisand, Billy Joel, Rita, the Beatles, and more.
+</p>
+
+<h2>Together</h2>
+<p>
+Larry and Mindy met in 2006 and quickly began performing together — in Israel and abroad, including at the Isle of Wight Festival in 2008.  
+They released two albums of original music: <strong>Two Hearts One Beat</strong> (2007) and <strong>EBTB</strong> (2009).
+</p>
+
+<p>
+They married in 2009 and built their dream home in the Galilee mountains, surrounded by an organic garden and their beloved cat, K.C.
+</p>
+
+<h3>Current Websites</h3>
+<ul>
+    <li><a href="https://www.larryandmindy.co.il" target="_blank">larryandmindy.co.il</a></li>
+    <li><a href="https://www.larrymindy.com" target="_blank">larrymindy.com</a></li>
+</ul>
+
+</div>
+
+<!-- ========================= -->
+<!--        HEBREW TAB         -->
+<!-- ========================= -->
+
+<div id="hebrew" class="content rtl">
+
+<h1>אודות לארי ומינדי</h1>
+
+<!-- Placeholder for Hebrew image -->
+<img src="your-image-he.jpg" alt="לארי ומינדי">
+
+<h2>לארי</h2>
+<p>
+לארי פוגל נולד בפלורידה ועלה לישראל עם משפחתו בגיל 12. הוא התאהב בגיטרה בגיל 11, וגילה את עולם הפולק בכיתה ג׳ כששמע לראשונה את סיימון וגרפונקל.
+</p>
+
+<p>
+לאורך שירותו בחיל האוויר המשיך להופיע, ואף נפוצה שמועה שהוא אחיו הצעיר של פול סיימון — ורבים האמינו לכך.
+</p>
+
+<p>
+לאחר הצבא הופיע במועדונים מוכרים בתל אביב, ולאחר מכן פנה לקריירה בניהול מלונאות, תיירות וקמעונאות.
+</p>
+
+<h2>מינדי</h2>
+<p>
+מינדי פוגל נולדה בניו יורק וגדלה בפלורידה. בגיל 19 עלתה לישראל לבדה.  
+היא הופיעה בלהקת מוזיקה יהודית ברחבי ארה״ב וקנדה, ולמדה סיעוד ועבודה סוציאלית באוניברסיטה העברית.
+</p>
+
+<p>
+עבדה כטכנאית וטרינרית, מנהלת יבוא, ובהמשך כמתרגמת עצמאית. המוזיקה תמיד נשארה אהבתה הגדולה.
+</p>
+
+<h2>יחד</h2>
+<p>
+לארי ומינדי נפגשו ב‑2006 והחלו להופיע יחד — בישראל ובחו״ל, כולל בפסטיבל Isle of Wight בשנת 2008.  
+הם הוציאו שני אלבומים מקוריים: <strong>Two Hearts One Beat</strong> (2007) ו‑<strong>EBTB</strong> (2009).
+</p>
+
+<p>
+הם נישאו ב‑2009 ובנו את בית חלומותיהם בגליל, לצד גינה אורגנית וחתולתם האהובה קיי.סי.
+</p>
+
+<h3>האתרים הפעילים</h3>
+<ul>
+    <li><a href="https://www.larryandmindy.co.il" target="_blank">larryandmindy.co.il</a></li>
+    <li><a href="https://www.larrymindy.com" target="_blank">larrymindy.com</a></li>
+</ul>
+
+</div>
+
+<footer>
+This page will eventually replace our old websites when we retire and relocate.  
+For now, our main sites are still active.
+</footer>
+
+</body>
+</html>
