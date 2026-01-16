@@ -10,14 +10,44 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        line-height: 1.6;
-        background: #fafafa;
+        line-height: 1.7;
+        background: #f7f4f4;
+        color: #333;
     }
 
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 40px 20px 20px;
+        background: #9C2831;
+        color: white;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 2.4em;
+        letter-spacing: 1px;
+    }
+
+    .header h2 {
+        margin: 10px 0 0;
+        font-weight: normal;
+        font-size: 1.2em;
+    }
+
+    .header h3 {
+        margin-top: 25px;
+        font-size: 1.4em;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    /* Tabs */
     .tabs {
         display: flex;
-        background: #333;
+        background: #7f1f27;
         color: white;
+        border-bottom: 4px solid #9C2831;
     }
 
     .tab {
@@ -25,23 +55,28 @@
         cursor: pointer;
         flex: 1;
         text-align: center;
-        background: #444;
+        background: #9C2831;
         transition: background 0.3s;
+        font-size: 1.1em;
     }
 
     .tab:hover {
-        background: #555;
+        background: #b8323d;
     }
 
     .tab.active {
-        background: #222;
+        background: #5f151b;
         font-weight: bold;
     }
 
+    /* Content */
     .content {
         display: none;
-        padding: 20px;
+        padding: 30px 20px 40px;
         background: white;
+        max-width: 900px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.08);
     }
 
     .content.active {
@@ -61,13 +96,14 @@
         border-radius: 6px;
     }
 
-    footer {
-        margin-top: 40px;
-        padding: 20px;
-        background: #eee;
-        text-align: center;
-        font-size: 0.9em;
-        color: #555;
+    a {
+        color: #9C2831;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 </style>
 
@@ -84,6 +120,16 @@ function showTab(tabName) {
 </head>
 <body>
 
+<!-- ========================= -->
+<!--         HEADER            -->
+<!-- ========================= -->
+
+<div class="header">
+    <h1>Larry and Mindy</h1>
+    <h2>Live performances of songs from the 60s & 70s</h2>
+    <h3>About</h3>
+</div>
+
 <div class="tabs">
     <div id="english-tab" class="tab active" onclick="showTab('english')">English</div>
     <div id="hebrew-tab" class="tab" onclick="showTab('hebrew')">עברית</div>
@@ -97,14 +143,11 @@ function showTab(tabName) {
 
 <h1>About Larry & Mindy</h1>
 
-<!-- Placeholder for an image -->
-<!-- Replace "your-image.jpg" with your actual filename -->
 <img src="your-image.jpg" alt="Larry and Mindy">
 
 <h2>Larry</h2>
 <p>
-Larry Fogel was born in Florida and moved to Israel at age 12. He fell in love with the guitar at 11 and discovered folk music in 3rd grade when he first heard Simon & Garfunkel’s “Feelin’ Groovy.”  
-He began performing in high school and continued through his army service, where a rumor spread that he was Paul Simon’s younger brother — and people believed it.
+Larry Fogel was born in Florida and moved to Israel at age 12. He fell in love with the guitar at 11 and discovered folk music in 3rd grade when he first heard Simon & Garfunkel’s “Feelin’ Groovy.”
 </p>
 
 <p>
@@ -131,8 +174,13 @@ Music remained her constant love — she performed at private events and sang Ju
 <h2>Together</h2>
 <p>
 Larry and Mindy met in 2006 and quickly began performing together — in Israel and abroad, including at the Isle of Wight Festival in 2008.  
-They released two albums of original music: <strong>Two Hearts One Beat</strong> (2007) and <strong>EBTB</strong> (2009).
+They released two albums of original music:
 </p>
+
+<ul>
+    <li><a href="https://open.spotify.com/album/3bwv1AYyFdCqXGG82AndkT" target="_blank">Two Hearts One Beat</a> (2007)</li>
+    <li><a href="https://open.spotify.com/album/4KA8m8oYtvnWZKJid65nhC" target="_blank">EBTB</a> (2009)</li>
+</ul>
 
 <p>
 They married in 2009 and built their dream home in the Galilee mountains, surrounded by an organic garden and their beloved cat, K.C.
@@ -152,9 +200,12 @@ They married in 2009 and built their dream home in the Galilee mountains, surrou
 
 <div id="hebrew" class="content rtl">
 
-<h1>אודות לארי ומינדי</h1>
+<div class="header" style="background:#9C2831; padding:20px; margin:-30px -20px 20px -20px;">
+    <h1 style="margin:0;">לארי ומינדי</h1>
+    <h2 style="margin:10px 0 0;">הופעות חיות של שירי שנות ה־60 וה־70</h2>
+    <h3 style="margin-top:20px; text-decoration:underline;">אודות</h3>
+</div>
 
-<!-- Placeholder for Hebrew image -->
 <img src="your-image-he.jpg" alt="לארי ומינדי">
 
 <h2>לארי</h2>
@@ -183,8 +234,13 @@ They married in 2009 and built their dream home in the Galilee mountains, surrou
 <h2>יחד</h2>
 <p>
 לארי ומינדי נפגשו ב‑2006 והחלו להופיע יחד — בישראל ובחו״ל, כולל בפסטיבל Isle of Wight בשנת 2008.  
-הם הוציאו שני אלבומים מקוריים: <strong>Two Hearts One Beat</strong> (2007) ו‑<strong>EBTB</strong> (2009).
+הם הוציאו שני אלבומים של שירים מקוריים:
 </p>
+
+<ul>
+    <li><a href="https://open.spotify.com/album/3bwv1AYyFdCqXGG82AndkT" target="_blank">Two Hearts One Beat</a> (2007)</li>
+    <li><a href="https://open.spotify.com/album/4KA8m8oYtvnWZKJid65nhC" target="_blank">EBTB</a> (2009)</li>
+</ul>
 
 <p>
 הם נישאו ב‑2009 ובנו את בית חלומותיהם בגליל, לצד גינה אורגנית וחתולתם האהובה קיי.סי.
@@ -197,11 +253,6 @@ They married in 2009 and built their dream home in the Galilee mountains, surrou
 </ul>
 
 </div>
-
-<footer>
-This page will eventually replace our old websites when we retire and relocate.  
-For now, our main sites are still active.
-</footer>
 
 </body>
 </html>
