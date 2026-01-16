@@ -19,8 +19,11 @@
         color: #333;
     }
 
-    /* Tabs */
+    /* Sticky Tabs */
     .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
         display: flex;
         background: #7f1f27;
         color: white;
@@ -48,27 +51,34 @@
         font-weight: bold;
     }
 
-    /* Header below tabs */
+    /* Header Banner */
     .header {
         text-align: center;
-        padding: 30px 20px 10px;
-        background: transparent;
-        color: black;
+        padding: 40px 20px 25px;
+        margin: 0 auto 20px;
+        background: linear-gradient(#fffdfb, #f0e7e1);
+        border: 1px solid #d8ccc4;
+        border-radius: 10px;
+        max-width: 900px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.08),
+                    0 4px 10px rgba(0,0,0,0.1);
     }
 
     .header h1 {
         margin: 0;
         font-size: 2.6em;
         letter-spacing: 1px;
+        color: #9C2831;
     }
 
     .header h2 {
         margin: 10px 0 0;
         font-weight: normal;
         font-size: 1.25em;
+        color: #333;
     }
 
-    /* Content card */
+    /* Content Card */
     .content {
         display: none;
         padding: 40px 40px 50px;
@@ -108,8 +118,16 @@
         text-decoration: underline;
     }
 
-    h1 {
-        margin-top: 0;
+    /* Fade-in animation */
+    .fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 </style>
 
@@ -121,6 +139,21 @@ function showTab(tabName) {
     document.getElementById(tabName).classList.add('active');
     document.getElementById(tabName + "-tab").classList.add('active');
 }
+
+/* Fade-in on scroll */
+document.addEventListener("DOMContentLoaded", () => {
+    const faders = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    faders.forEach(f => observer.observe(f));
+});
 </script>
 
 </head>
@@ -150,53 +183,44 @@ function showTab(tabName) {
 
 <div id="english" class="content active">
 
-<h1>About</h1>
+<h1 class="fade">About</h1>
 
-<img src="your-image.jpg" alt="Larry and Mindy">
+<img src="your-image.jpg" alt="Larry and Mindy" class="fade">
 
-<h2>Larry</h2>
-<p>
-Larry Fogel was born in Florida and moved to Israel at age 12. He fell in love with the guitar at 11 and discovered folk music in 3rd grade when he first heard Simon & Garfunkel’s “Feelin’ Groovy.”
+<h2 class="fade">Larry</h2>
+<p class="fade">
+Larry Fogel was born in Florida and moved to Israel at age 12...
 </p>
 
-<p>
-After the army, Larry performed in well‑known Tel Aviv clubs, singing the music of Simon & Garfunkel, Bob Dylan, Don McLean, James Taylor, and more.  
-He later stepped away from performing to build a career in hotel, tourism, and retail management, and to raise a family.
+<p class="fade">
+After the army, Larry performed in well‑known Tel Aviv clubs...
 </p>
 
-<p>
-In 2003 he returned to the stage, performing in folk clubs across Israel and at the Jacob’s Ladder Folk Festival.  
-From 2004–2011 he performed in a Simon & Garfunkel tribute show before choosing to focus on performing with Mindy.
+<p class="fade">
+In 2003 he returned to the stage...
 </p>
 
-<h2>Mindy</h2>
-<p>
-Mindy Fogel was born in New York and grew up in Florida. At 19 she moved to Israel on her own.  
-She performed in a Jewish music group throughout the U.S. and Canada, and later studied nursing and social work at Hebrew University.
+<h2 class="fade">Mindy</h2>
+<p class="fade">
+Mindy Fogel was born in New York and grew up in Florida...
 </p>
 
-<p>
-She worked as a veterinary technician, an import manager, and later as a freelance translator.  
-Music remained her constant love — she performed at private events and sang Judy Collins, Barbra Streisand, Billy Joel, Rita, the Beatles, and more.
+<p class="fade">
+She worked as a veterinary technician...
 </p>
 
-<h2>Together</h2>
-<p>
-Larry and Mindy met in 2006 and quickly began performing together — in Israel and abroad, including at the Isle of Wight Festival in 2008.  
-They released two albums of original music:
+<h2 class="fade">Together</h2>
+<p class="fade">
+Larry and Mindy met in 2006...
 </p>
 
-<ul>
+<ul class="fade">
     <li><a href="https://open.spotify.com/album/3bwv1AYyFdCqXGG82AndkT" target="_blank">Two Hearts One Beat</a> (2007)</li>
     <li><a href="https://open.spotify.com/album/4KA8m8oYtvnWZKJid65nhC" target="_blank">EBTB</a> (2009)</li>
 </ul>
 
-<p>
-They married in 2009 and built their dream home in the Galilee mountains, surrounded by an organic garden and their beloved cat, K.C.
-</p>
-
-<h3>Current Websites</h3>
-<ul>
+<h3 class="fade">Homepages</h3>
+<ul class="fade">
     <li><a href="https://www.larryandmindy.co.il" target="_blank">larryandmindy.co.il</a></li>
     <li><a href="https://www.larrymindy.com" target="_blank">larrymindy.com</a></li>
 </ul>
@@ -209,55 +233,41 @@ They married in 2009 and built their dream home in the Galilee mountains, surrou
 
 <div id="hebrew" class="content rtl">
 
-<div class="header" style="background:transparent; color:black; padding:30px 20px 10px; margin:-30px -20px 20px -20px;">
+<div class="header" style="background:linear-gradient(#fffdfb,#f0e7e1); border:1px solid #d8ccc4; border-radius:10px; box-shadow:inset 0 0 10px rgba(0,0,0,0.08),0 4px 10px rgba(0,0,0,0.1);">
     <h1>לארי & מינדי</h1>
     <h2>הופעות חיות של שירי שנות ה־60 וה־70</h2>
 </div>
 
-<h1>אודות</h1>
+<h1 class="fade">אודות</h1>
 
-<img src="your-image-he.jpg" alt="לארי ומינדי">
+<img src="your-image-he.jpg" alt="לארי ומינדי" class="fade">
 
-<h2>לארי</h2>
-<p>
-לארי פוגל נולד בפלורידה ועלה לישראל עם משפחתו בגיל 12. הוא התאהב בגיטרה בגיל 11, וגילה את עולם הפולק בכיתה ג׳ כששמע לראשונה את סיימון וגרפונקל.
+<h2 class="fade">לארי</h2>
+<p class="fade">
+לארי פוגל נולד בפלורידה ועלה לישראל...
 </p>
 
-<p>
-לאורך שירותו בחיל האוויר המשיך להופיע, ואף נפוצה שמועה שהוא אחיו הצעיר של פול סיימון — ורבים האמינו לכך.
+<p class="fade">
+לאורך שירותו בחיל האוויר...
 </p>
 
-<p>
-לאחר הצבא הופיע במועדונים מוכרים בתל אביב, ולאחר מכן פנה לקריירה בניהול מלונאות, תיירות וקמעונאות.
+<h2 class="fade">מינדי</h2>
+<p class="fade">
+מינדי פוגל נולדה בניו יורק...
 </p>
 
-<h2>מינדי</h2>
-<p>
-מינדי פוגל נולדה בניו יורק וגדלה בפלורידה. בגיל 19 עלתה לישראל לבדה.  
-היא הופיעה בלהקת מוזיקה יהודית ברחבי ארה״ב וקנדה, ולמדה סיעוד ועבודה סוציאלית באוניברסיטה העברית.
+<h2 class="fade">יחד</h2>
+<p class="fade">
+לארי ומינדי נפגשו ב‑2006...
 </p>
 
-<p>
-עבדה כטכנאית וטרינרית, מנהלת יבוא, ובהמשך כמתרגמת עצמאית. המוזיקה תמיד נשארה אהבתה הגדולה.
-</p>
-
-<h2>יחד</h2>
-<p>
-לארי ומינדי נפגשו ב‑2006 והחלו להופיע יחד — בישראל ובחו״ל, כולל בפסטיבל Isle of Wight בשנת 2008.  
-הם הוציאו שני אלבומים של שירים מקוריים:
-</p>
-
-<ul>
+<ul class="fade">
     <li><a href="https://open.spotify.com/album/3bwv1AYyFdCqXGG82AndkT" target="_blank">Two Hearts One Beat</a> (2007)</li>
     <li><a href="https://open.spotify.com/album/4KA8m8oYtvnWZKJid65nhC" target="_blank">EBTB</a> (2009)</li>
 </ul>
 
-<p>
-הם נישאו ב‑2009 ובנו את בית חלומותיהם בגליל, לצד גינה אורגנית וחתולתם האהובה קיי.סי.
-</p>
-
-<h3>האתרים הפעילים</h3>
-<ul>
+<h3 class="fade">אתרי הבית</h3>
+<ul class="fade">
     <li><a href="https://www.larryandmindy.co.il" target="_blank">larryandmindy.co.il</a></li>
     <li><a href="https://www.larrymindy.com" target="_blank">larrymindy.com</a></li>
 </ul>
