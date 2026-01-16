@@ -7,39 +7,16 @@
 
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif;
         margin: 0;
         padding: 0;
         line-height: 1.7;
-        background: #f7f4f4;
+        background: #f3ece7;
+        background-image: radial-gradient(#e8dfd8 1px, transparent 1px),
+                          radial-gradient(#e8dfd8 1px, transparent 1px);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
         color: #333;
-    }
-
-    /* Header */
-    .header {
-        text-align: center;
-        padding: 40px 20px 20px;
-        background: #9C2831;
-        color: white;
-    }
-
-    .header h1 {
-        margin: 0;
-        font-size: 2.4em;
-        letter-spacing: 1px;
-    }
-
-    .header h2 {
-        margin: 10px 0 0;
-        font-weight: normal;
-        font-size: 1.2em;
-    }
-
-    .header h3 {
-        margin-top: 25px;
-        font-size: 1.4em;
-        font-weight: normal;
-        text-decoration: underline;
     }
 
     /* Tabs */
@@ -48,6 +25,7 @@
         background: #7f1f27;
         color: white;
         border-bottom: 4px solid #9C2831;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .tab {
@@ -55,13 +33,14 @@
         cursor: pointer;
         flex: 1;
         text-align: center;
-        background: #9C2831;
+        background: linear-gradient(#b8323d, #9C2831);
         transition: background 0.3s;
         font-size: 1.1em;
+        letter-spacing: 0.5px;
     }
 
     .tab:hover {
-        background: #b8323d;
+        background: linear-gradient(#c9444f, #a92d36);
     }
 
     .tab.active {
@@ -69,14 +48,36 @@
         font-weight: bold;
     }
 
-    /* Content */
+    /* Header below tabs */
+    .header {
+        text-align: center;
+        padding: 30px 20px 10px;
+        background: transparent;
+        color: black;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 2.6em;
+        letter-spacing: 1px;
+    }
+
+    .header h2 {
+        margin: 10px 0 0;
+        font-weight: normal;
+        font-size: 1.25em;
+    }
+
+    /* Content card */
     .content {
         display: none;
-        padding: 30px 20px 40px;
-        background: white;
+        padding: 40px 40px 50px;
+        background: #ffffff;
         max-width: 900px;
-        margin: auto;
-        box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        margin: 30px auto 50px;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        border: 1px solid #e0d6cf;
     }
 
     .content.active {
@@ -87,13 +88,14 @@
     .rtl {
         direction: rtl;
         text-align: right;
-        font-family: "Arial", sans-serif;
+        font-family: "Segoe UI", Arial, sans-serif;
     }
 
     img {
         max-width: 100%;
         margin: 20px 0;
         border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     a {
@@ -104,6 +106,10 @@
 
     a:hover {
         text-decoration: underline;
+    }
+
+    h1 {
+        margin-top: 0;
     }
 </style>
 
@@ -121,18 +127,21 @@ function showTab(tabName) {
 <body>
 
 <!-- ========================= -->
-<!--         HEADER            -->
+<!--           TABS            -->
 <!-- ========================= -->
-
-<div class="header">
-    <h1>Larry and Mindy</h1>
-    <h2>Live performances of songs from the 60s & 70s</h2>
-    <h3>About</h3>
-</div>
 
 <div class="tabs">
     <div id="english-tab" class="tab active" onclick="showTab('english')">English</div>
     <div id="hebrew-tab" class="tab" onclick="showTab('hebrew')">עברית</div>
+</div>
+
+<!-- ========================= -->
+<!--         HEADER            -->
+<!-- ========================= -->
+
+<div class="header">
+    <h1>Larry & Mindy</h1>
+    <h2>Live performances of songs from the 60s & 70s</h2>
 </div>
 
 <!-- ========================= -->
@@ -141,7 +150,7 @@ function showTab(tabName) {
 
 <div id="english" class="content active">
 
-<h1>About Larry & Mindy</h1>
+<h1>About</h1>
 
 <img src="your-image.jpg" alt="Larry and Mindy">
 
@@ -200,11 +209,12 @@ They married in 2009 and built their dream home in the Galilee mountains, surrou
 
 <div id="hebrew" class="content rtl">
 
-<div class="header" style="background:#9C2831; padding:20px; margin:-30px -20px 20px -20px;">
-    <h1 style="margin:0;">לארי ומינדי</h1>
-    <h2 style="margin:10px 0 0;">הופעות חיות של שירי שנות ה־60 וה־70</h2>
-    <h3 style="margin-top:20px; text-decoration:underline;">אודות</h3>
+<div class="header" style="background:transparent; color:black; padding:30px 20px 10px; margin:-30px -20px 20px -20px;">
+    <h1>לארי & מינדי</h1>
+    <h2>הופעות חיות של שירי שנות ה־60 וה־70</h2>
 </div>
+
+<h1>אודות</h1>
 
 <img src="your-image-he.jpg" alt="לארי ומינדי">
 
