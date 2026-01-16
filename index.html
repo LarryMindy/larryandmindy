@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
       background: #7f1f27;
       color: white;
       border-bottom: 4px solid #9C2831;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .tab {
@@ -63,8 +64,8 @@
       border-radius: 10px;
       max-width: 900px;
       box-shadow:
-        inset 0 0 10px rgba(0,0,0,0.08),
-        0 4px 10px rgba(0,0,0,0.1);
+        inset 0 0 10px rgba(0, 0, 0, 0.08),
+        0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .header img {
@@ -74,27 +75,45 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      box-shadow: 6px 6px 12px rgba(0,0,0,0.25);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.6em;
+      letter-spacing: 1px;
+      color: #9C2831;
+    }
+
+    .header h2 {
+      margin: 10px 0 0;
+      font-weight: normal;
+      font-size: 1.25em;
+      color: #333;
     }
 
     .content {
       display: none;
-      padding: 40px 40px 120px;
+      padding: 40px 40px 50px;
       background: #ffffff;
       max-width: 900px;
       margin: 30px auto 50px;
       border-radius: 10px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
       border: 1px solid #e0d6cf;
+      position: relative;
+      z-index: 1;
     }
 
     .content.active {
       display: block;
+      padding-bottom: 120px;
     }
 
     .rtl {
       direction: rtl;
       text-align: right;
+      font-family: "Segoe UI", Arial, sans-serif;
     }
 
     img {
@@ -102,7 +121,7 @@
       margin: 20px auto;
       border-radius: 6px;
       display: block;
-      box-shadow: 6px 6px 12px rgba(0,0,0,0.25);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
     }
 
     a {
@@ -126,13 +145,18 @@
       transform: translateY(0);
     }
 
+    /* Bottom banner styles */
     .bottom-banner {
       position: fixed;
       left: 0;
       bottom: 0;
       width: 100vw;
+      max-width: 100vw;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none !important;
       z-index: 1001;
-      box-shadow: none;
     }
   </style>
 
@@ -144,9 +168,8 @@
       document.querySelectorAll('.content').forEach(c =>
         c.classList.remove('active')
       );
-
       document.getElementById(tabName).classList.add('active');
-      document.getElementById(tabName + '-tab').classList.add('active');
+      document.getElementById(tabName + "-tab").classList.add('active');
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -177,33 +200,185 @@
 
   <!-- ENGLISH -->
   <div id="english" class="content active">
+
     <div class="header">
       <h1>Larry & Mindy</h1>
       <h2>Live performances of songs from the 60s & 70s</h2>
       <img src="USCY.jpg" alt="Larry & Mindy">
     </div>
 
+    <h1 class="fade">About</h1>
+
     <h2 class="fade">Mindy</h2>
-    <img src="Mindy.jpg" class="fade" alt="Mindy">
+    <img src="Mindy.jpg" alt="Mindy" class="fade">
+
+    <p class="fade">
+      Mindy Fogel was born in New York and grew up in Florida. At 19 she moved to
+      Israel on her own. She performed in a Jewish music group throughout the U.S.
+      and Canada, and later studied nursing and social work at Hebrew University.
+    </p>
+
+    <p class="fade">
+      She worked as a veterinary technician, an import manager, and later as a
+      freelance translator. Music remained her constant love — she performed at
+      private events and sang Judy Collins, Barbra Streisand, Billy Joel, Rita,
+      the Beatles, and more.
+    </p>
 
     <h2 class="fade">Larry</h2>
-    <img src="Larry.jpg" class="fade" alt="Larry">
+    <img src="Larry.jpg" alt="Larry" class="fade">
+
+    <p class="fade">
+      Larry Fogel was born in Florida and moved to Israel at age 12. He fell in
+      love with the guitar at 11 and discovered folk music in 3rd grade when he
+      first heard Simon & Garfunkel’s “Feelin’ Groovy.”
+    </p>
+
+    <p class="fade">
+      After the army, Larry performed in well-known Tel Aviv clubs, singing the
+      music of Simon & Garfunkel, Bob Dylan, Don McLean, James Taylor, and more.
+      He later stepped away from performing to build a career in hotel, tourism,
+      and retail management, and to raise a family.
+    </p>
+
+    <p class="fade">
+      In 2003 he returned to the stage, performing in folk clubs across Israel and
+      at the Jacob’s Ladder Folk Festival. From 2004–2011 he performed in a Simon &
+      Garfunkel tribute show before choosing to focus on performing with Mindy.
+    </p>
 
     <h2 class="fade">Together</h2>
-    <img src="Roof.jpg" class="fade" alt="Together">
+    <img src="Roof.jpg" alt="Larry & Mindy Together" class="fade">
 
-    <img src="English.jpg" class="bottom-banner fade" alt="English banner">
+    <p class="fade">
+      Larry and Mindy met in 2006 and quickly began performing together — in Israel
+      and abroad, including at the Isle of Wight Festival in 2008. They released
+      two albums of original music:
+    </p>
+
+    <ul class="fade">
+      <li>
+        <a href="https://open.spotify.com/album/3bwv1AYyFdCqXGG82AndkT" target="_blank">
+          Two Hearts One Beat
+        </a> (2007)
+      </li>
+      <li>
+        <a href="https://open.spotify.com/album/4KA8m8oYtvnWZKJid65nhC" target="_blank">
+          EBTB
+        </a> (2009)
+      </li>
+    </ul>
+
+    <p class="fade">
+      They married in 2009 and built their dream home in the Galilee mountains,
+      surrounded by an organic garden and their beloved cat, K.C.
+    </p>
+
+    <h3 class="fade">Homepages</h3>
+
+    <ul class="fade">
+      <li>
+        <a href="https://www.larryandmindy.co.il" target="_blank">
+          larryandmindy.co.il
+        </a>
+      </li>
+      <li>
+        <a href="https://www.larrymindy.com" target="_blank">
+          larrymindy.com
+        </a>
+      </li>
+    </ul>
+
+    <img src="English.jpg" alt="Bottom Banner English" class="fade bottom-banner">
   </div>
 
   <!-- HEBREW -->
   <div id="hebrew" class="content rtl">
+
     <div class="header">
       <h1>לארי & מינדי</h1>
       <h2>הופעות חיות של שירי שנות ה־60 וה־70</h2>
       <img src="USCY.jpg" alt="לארי ומינדי">
     </div>
 
-    <img src="Hebrew.jpg" class="bottom-banner fade" alt="Hebrew banner">
+    <h1 class="fade">אודות</h1>
+
+    <h2 class="fade">מינדי</h2>
+    <img src="Mindy.jpg" alt="מינדי" class="fade">
+
+    <p class="fade">
+      מינדי פוגל נולדה בניו יורק וגדלה בפלורידה. בגיל 19 עלתה לישראל לבדה.
+      היא הופיעה בלהקת מוזיקה יהודית ברחבי ארה״ב וקנדה,
+      ולמדה סיעוד ועבודה סוציאלית באוניברסיטה העברית.
+    </p>
+
+    <p class="fade">
+      עבדה כטכנאית וטרינרית, מנהלת יבוא, ובהמשך כמתרגמת עצמאית.
+      המוזיקה תמיד נשארה אהבתה הגדולה.
+    </p>
+
+    <h2 class="fade">לארי</h2>
+    <img src="Larry.jpg" alt="לארי" class="fade">
+
+    <p class="fade">
+      לארי פוגל נולד בפלורידה ועלה לישראל עם משפחתו בגיל 12.
+      הוא התאהב בגיטרה בגיל 11, וגילה את עולם הפולק בכיתה ג׳
+      כששמע לראשונה את סיימון וגרפונקל.
+    </p>
+
+    <p class="fade">
+      לאורך שירותו בחיל האוויר המשיך להופיע,
+      ואף נפוצה שמועה שהוא אחיו הצעיר של פול סיימון — ורבים האמינו לכך.
+    </p>
+
+    <p class="fade">
+      לאחר הצבא הופיע במועדונים מוכרים בתל אביב,
+      ולאחר מכן פנה לקריירה בניהול מלונאות, תיירות וקמעונאות.
+    </p>
+
+    <h2 class="fade">יחד</h2>
+    <img src="Roof.jpg" alt="לארי ומינדי יחד" class="fade">
+
+    <p class="fade">
+      לארי ומינדי נפגשו ב-2006 והחלו להופיע יחד —
+      בישראל ובחו״ל, כולל בפסטיבל Isle of Wight בשנת 2008.
+      הם הוציאו שני אלבומים של שירים מקוריים:
+    </p>
+
+    <ul class="fade">
+      <li>
+        <a href="https://open.spotify.com/album/3bwv1AYyFdCqXGG82AndkT" target="_blank">
+          Two Hearts One Beat
+        </a> (2007)
+      </li>
+      <li>
+        <a href="https://open.spotify.com/album/4KA8m8oYtvnWZKJid65nhC" target="_blank">
+          EBTB
+        </a> (2009)
+      </li>
+    </ul>
+
+    <p class="fade">
+      הם נישאו ב-2009 ובנו את בית חלומותיהם בגליל,
+      לצד גינה אורגנית וחתולתם האהובה קיי.סי.
+    </p>
+
+    <h3 class="fade">אתרי הבית</h3>
+
+    <ul class="fade">
+      <li>
+        <a href="https://www.larryandmindy.co.il" target="_blank">
+          larryandmindy.co.il
+        </a>
+      </li>
+      <li>
+        <a href="https://www.larrymindy.com" target="_blank">
+          larrymindy.com
+        </a>
+      </li>
+    </ul>
+
+    <img src="Hebrew.jpg" alt="Bottom Banner Hebrew" class="fade bottom-banner">
   </div>
 
 </body>
